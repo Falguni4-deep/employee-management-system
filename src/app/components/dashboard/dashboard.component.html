@@ -1,0 +1,180 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+
+  <!-- Welcome Section -->
+  <div class="p-4 mb-4 rounded shadow-sm bg-light">
+
+    <h2 class="fw-bold">
+      Welcome Back, Admin 👋
+    </h2>
+
+    <p class="text-muted mb-3">
+      Manage Employees, Departments and Designations from a single dashboard.
+    </p>
+
+    <a
+      routerLink="/add-employee"
+      class="btn btn-primary me-2">
+
+      Add Employee
+
+    </a>
+
+    <a
+      routerLink="/departments"
+      class="btn btn-success me-2">
+
+      Departments
+
+    </a>
+
+    <a
+      routerLink="/designations"
+      class="btn btn-danger">
+
+      Designations
+
+    </a>
+
+  </div>
+
+  <!-- Statistics Cards -->
+  <div class="row">
+
+    <div class="col-md-4 mb-3">
+
+      <div class="card shadow border-0 bg-primary text-white">
+
+        <div class="card-body text-center">
+
+          <i class="bi bi-people-fill fs-1"></i>
+
+          <h5 class="mt-3">
+            Total Employees
+          </h5>
+
+          <h2>
+            {{ totalEmployees }}
+          </h2>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-4 mb-3">
+
+      <div class="card shadow border-0 bg-success text-white">
+
+        <div class="card-body text-center">
+
+          <i class="bi bi-building fs-1"></i>
+
+          <h5 class="mt-3">
+            Departments
+          </h5>
+
+          <h2>
+            {{ totalDepartments }}
+          </h2>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-4 mb-3">
+
+      <div class="card shadow border-0 bg-danger text-white">
+
+        <div class="card-body text-center">
+
+          <i class="bi bi-person-badge fs-1"></i>
+
+          <h5 class="mt-3">
+            Designations
+          </h5>
+
+          <h2>
+            {{ totalDesignations }}
+          </h2>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Information Section -->
+  <div class="card shadow border-0 mt-4">
+
+    <div class="card-body">
+
+      <h4 class="mb-3">
+        Employee Management System
+      </h4>
+
+      <p class="text-muted">
+        This system helps administrators manage employees,
+        departments and designations efficiently through a
+        centralized dashboard.
+      </p>
+
+      <hr>
+
+      <div class="row text-center">
+
+        <div class="col-md-4">
+
+          <i class="bi bi-people fs-2 text-primary"></i>
+
+          <h5 class="mt-2">
+            Employees
+          </h5>
+
+          <small class="text-muted">
+            Add, Edit & Delete employee records
+          </small>
+
+        </div>
+
+        <div class="col-md-4">
+
+          <i class="bi bi-building fs-2 text-success"></i>
+
+          <h5 class="mt-2">
+            Departments
+          </h5>
+
+          <small class="text-muted">
+            Manage organizational departments
+          </small>
+
+        </div>
+
+        <div class="col-md-4">
+
+          <i class="bi bi-person-badge fs-2 text-danger"></i>
+
+          <h5 class="mt-2">
+            Designations
+          </h5>
+
+          <small class="text-muted">
+            Manage employee roles & positions
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

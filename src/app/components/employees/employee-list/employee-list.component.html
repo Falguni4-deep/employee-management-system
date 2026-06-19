@@ -1,0 +1,75 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+
+  <div class="d-flex justify-content-between mb-3">
+    <h3>Employees</h3>
+
+    <button
+      class="btn btn-primary"
+      routerLink="/add-employee">
+      Add Employee
+    </button>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-4">
+        <input
+        type="text"
+        class="form-control"
+        placeholder="Search Employee..."
+        [(ngModel)]="searchText"
+        (input)="searchEmployee()">
+    </div>
+</div>
+
+  <table class="table table-bordered table-hover">
+
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Designation</th>
+        <th>Phone</th>
+        <th>Type</th>
+        <th>Salary</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let emp of employees">
+
+        <td>{{ emp.employeeId }}</td>
+        <td>{{ emp.fullName }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.departmentName }}</td>
+        <td>{{ emp.designationName }}</td>
+        <td>{{ emp.phone }}</td>
+        <td>{{ emp.employeeType }}</td>
+        <td>{{ emp.salary }}</td>
+
+        <td>
+          <button
+            class="btn btn-warning btn-sm me-2"
+            [routerLink]="['/edit-employee', emp.employeeId]">
+            Edit
+        </button>
+
+          <button
+            class="btn btn-danger btn-sm"
+            (click)="deleteEmployee(emp.employeeId)">
+            Delete
+        </button>
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>

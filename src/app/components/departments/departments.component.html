@@ -1,0 +1,73 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+
+  <h3 class="mb-3">
+    Departments
+  </h3>
+
+  <div class="row mb-3">
+
+    <div class="col-md-4">
+
+      <input
+        class="form-control"
+        placeholder="Department Name"
+        [(ngModel)]="departmentName">
+
+    </div>
+
+    <div class="col-md-2">
+
+      <button
+        class="btn btn-primary"
+        (click)="addDepartment()">
+
+        Add
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <table class="table table-bordered">
+
+    <thead class="table-dark">
+
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Action</th>
+      </tr>
+
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let dept of departments">
+
+        <td>{{ dept.departmentId }}</td>
+        <td>{{ dept.departmentName }}</td>
+
+        <td>
+
+          <button
+            class="btn btn-danger btn-sm"
+            (click)="deleteDepartment(
+              dept.departmentId
+            )">
+
+            Delete
+
+          </button>
+
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>

@@ -1,0 +1,69 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+
+  <h3 class="mb-3">
+    Designations
+  </h3>
+
+  <div class="row mb-3">
+
+    <div class="col-md-4">
+
+      <input
+        class="form-control"
+        placeholder="Designation Name"
+        [(ngModel)]="designationName">
+
+    </div>
+
+    <div class="col-md-2">
+
+      <button
+        class="btn btn-primary"
+        (click)="addDesignation()">
+
+        Add
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <table class="table table-bordered">
+
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let des of designations">
+
+        <td>{{ des.designationId }}</td>
+        <td>{{ des.designationName }}</td>
+
+        <td>
+          <button
+            class="btn btn-danger btn-sm"
+            (click)="deleteDesignation(
+              des.designationId
+            )">
+
+            Delete
+
+          </button>
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
