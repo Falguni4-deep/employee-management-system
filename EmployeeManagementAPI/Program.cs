@@ -8,12 +8,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var connectionString =
+    Environment.GetEnvironmentVariable("DefaultConnection")
+    ?? builder.Configuration.GetConnectionString("DefaultConnection");
+
 builder.Services.AddDbContext<AppDbContext>(
     options =>
         options.UseMySql(
-            builder.Configuration.GetConnectionString("DefaultConnection"),
-            ServerVersion.AutoDetect(
-                builder.Configuration.GetConnectionString("DefaultConnection"))
+            connectionString,
+            ServerVersion.AutoDetect(connectionString)
         ));
 
 builder.Services.AddCors(options =>

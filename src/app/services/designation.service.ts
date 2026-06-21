@@ -9,7 +9,7 @@ import { Designation } from '../models/designation';
 export class DesignationService {
 
   private apiUrl =
-    'http://localhost:5254/api/Designations';
+    'https://employeemanagementapi-1.onrender.com/api/Designations';
 
   constructor(private http: HttpClient) {}
 

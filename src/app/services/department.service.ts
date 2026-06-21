@@ -9,7 +9,7 @@ import { Department } from '../models/department';
 export class DepartmentService {
 
   private apiUrl =
-    'http://localhost:5254/api/Departments';
+    'https://employeemanagementapi-1.onrender.com/api/Departments';
 
   constructor(private http: HttpClient) {}
 
